@@ -75,3 +75,9 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+// 设置tab按钮的颜色
+ion-tab-button {
+  --color: #8C8E8C; // 默认颜色
+  --color-selected: #F53D3D; // 选中颜色
+}

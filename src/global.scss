@@ -9,3 +9,112 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+// 清除全局样式
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; // 10px
+}
+
+.clearfix {
+
+    // 清除浮动
+    &::after {
+        display: block;
+        content: "";
+        height: 0px;
+        clear: both;
+    }
+}
+
+// 设置全局字体样式
+@font-face {
+    font-family: 'iconfont';
+    src: url('assets/fonts/iconfont.eot');
+    src: url('assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/iconfont.woff2') format('woff2'),
+        url('assets/fonts/iconfont.woff') format('woff'),
+        url('assets/fonts/iconfont.ttf') format('truetype'),
+        url('assets/fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont12 {
+    font-family: "iconfont" !important;
+    font-size: 1.2rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont14 {
+    font-family: "iconfont" !important;
+    font-size: 1.4rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont18 {
+    font-family: "iconfont" !important;
+    font-size: 1.8rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont20 {
+    font-family: "iconfont" !important;
+    font-size: 2rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont30 {
+    font-family: "iconfont" !important;
+    font-size: 3rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,4 +1,44 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+.message {
+  position: relative;
+
+  .badge {
+    position: absolute;
+    top: -.4rem;
+    right: -0.2rem;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 2px 3px;
+  }
+}
+
+ion-slide {
+  height: 15rem;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.h_title {
+  margin: 0.4rem;
+  padding-left: .3rem;
+  border-left: .3rem solid red;
+}
+
+.segment {
+  border: none;
+
+  img {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 1rem;
+  }
+
+  p {
+    color: black;
+    margin-top: .5rem;
+    font-size: 1rem;
+  }
 }
