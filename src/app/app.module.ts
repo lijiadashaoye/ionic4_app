@@ -26,7 +26,7 @@ import {
   AppComponent
 } from './app.component';
 
-// 配置全局
+// 配置全局统一样式
 const config: object = {
   mode: 'ios',
   backButtonText: '返回' // 设置默认返回按钮文字

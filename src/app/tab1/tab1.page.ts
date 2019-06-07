@@ -31,9 +31,6 @@ export class Tab1Page {
         title: `第${i+1}个`
       })
     }
-    let inWith=self.innerWidth;
-    console.log(inWith)
-    console.log(self)
   }
 
   ionSlideTouchEnd(e) { // 手动滑动结束
