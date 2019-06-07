@@ -18,6 +18,7 @@ export class Tab1Page {
       delay: 1000,
     },
   };
+  lists = []; // list的数据
   ngOnInit(): void {
     for (let i = 1; i < 4; i++) {
       this.listSlide.push({
@@ -31,10 +32,16 @@ export class Tab1Page {
         title: `第${i+1}个`
       })
     }
+    for (let i = 0; i < 12; i++) {
+      this.lists.push({
+        pic: `assets/images/list${i+1}.jpg`,
+        title: `第${i+1}个`
+      })
+    }
   }
 
   ionSlideTouchEnd(e) { // 手动滑动结束
-    setTimeout(() => e.target.startAutoplay(), 3000)
+    setTimeout(() => e.target.starFtAutoplay(), 3000)
   }
   ionSlideTap(e) { // 点击图片
     e.target.getActiveIndex()

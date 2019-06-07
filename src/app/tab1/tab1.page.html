@@ -8,7 +8,7 @@
 
     <ion-buttons slot="end" class="message">
       <span class="iconfont20">&#xe61c;</span>
-      <ion-badge color="danger" class="badge">3</ion-badge>
+      <ion-badge color="danger" class="badge">13</ion-badge>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +22,6 @@
     </ion-slide>
   </ion-slides>
 
-
   <div class="h_title">
     猜你喜欢
   </div>
@@ -33,4 +32,19 @@
       <p>{{item.title}}</p>
     </ion-segment-button>
   </ion-segment>
+
+  <div class="h_title">
+    商品列表
+  </div>
+  <!-- 12分栅格 -->
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size='6' *ngFor="let item of lists">
+        <img [src]='item.pic'>
+        <p style="text-align:center">{{item.title}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
 </ion-content>

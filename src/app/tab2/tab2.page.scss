@@ -1,1 +1,18 @@
+.wap {
+    height: 100%;
+    display: flex;
 
+    .left {
+        width: 10rem;
+        height: 100%;
+        overflow-y: auto;
+        ion-label{
+            font-size:1rem
+        }
+    }
+
+    .right {
+        flex-grow: 1;
+        background: blue
+    }
+}
