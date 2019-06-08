@@ -19,6 +19,12 @@ ion-grid {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left:.4rem;
+
+    ion-label {
+        padding: 0;
+        font-size: 1rem;
+    }
 }
 
 .prd_img {
@@ -62,7 +68,8 @@ ion-grid {
     .num_act {
         background: rgb(240, 238, 238);
         font-size: 1.4rem;
-        line-height: 1.3rem
+        line-height: 1.3rem;
+        cursor: pointer;
     }
 
     .num_input {
@@ -79,5 +86,19 @@ ion-grid {
         padding-right: .3rem;
         color: red;
         font-size: 1rem
+    }
+}
+
+.total_money {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.jiesuan {
+    text-align: end;
+
+    ion-button {
+        margin: 0;
     }
 }

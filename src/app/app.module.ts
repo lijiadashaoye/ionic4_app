@@ -2,6 +2,9 @@ import {
   NgModule
 } from '@angular/core';
 import {
+  FormsModule
+} from '@angular/forms'
+import {
   BrowserModule
 } from '@angular/platform-browser';
 import {
@@ -34,7 +37,11 @@ const config: object = {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(config), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    IonicModule.forRoot(config), AppRoutingModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

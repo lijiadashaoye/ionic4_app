@@ -30,8 +30,8 @@
           <ion-col size='4'>
             <ion-row>
 
-              <ion-col size='3' class="forCheckbox">
-                <ion-checkbox color="primary"></ion-checkbox>
+              <ion-col size='3' class="forCheckbox" (click)='changeTotal()'>
+                <ion-checkbox [(ngModel)]="item.checked" color="primary"></ion-checkbox>
               </ion-col>
 
               <ion-col size='9'>
@@ -71,7 +71,7 @@
                   </ion-col>
                   <ion-col size='4' offset='4' class="set_num">
                     <ion-row>
-                      <ion-col size='3' class="num_act"(click)="changeNum(false,item)">-</ion-col>
+                      <ion-col size='3' class="num_act" (click)="changeNum(false,item)">-</ion-col>
                       <ion-col size='6' class="num_input">
                         {{item.bottom.num}}
                       </ion-col>
@@ -91,3 +91,32 @@
   </ion-grid>
 
 </ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size='2' class="forCheckbox">
+        <ion-item lines="none">
+
+          <ion-checkbox [(ngModel)]="isCheckAll" (ionChange)='selectAll()' color="primary"></ion-checkbox>
+          <ion-label>
+            全选
+          </ion-label>
+        </ion-item>
+
+      </ion-col>
+      <ion-col size='4' class="total_money">
+
+        <ion-item lines="none">
+          <ion-label>
+            合计：{{total.money}}
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size='3' class="jiesuan" offset='3'>
+        <ion-button expand="full" color="danger"> 去结算
+          <span class="totalNum">{{total.num}}</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
