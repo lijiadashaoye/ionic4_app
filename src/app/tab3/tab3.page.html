@@ -108,13 +108,13 @@
 
         <ion-item lines="none">
           <ion-label>
-            合计：{{total.money}}
+            合计：{{setMoney(total.money)}}
           </ion-label>
         </ion-item>
       </ion-col>
       <ion-col size='3' class="jiesuan" offset='3'>
         <ion-button expand="full" color="danger" (click)="toPay()"> 去结算
-          <span class="totalNum">{{total.num}}</span>
+          <span class="totalNum">({{total.num}})</span>
         </ion-button>
       </ion-col>
     </ion-row>

@@ -19,7 +19,7 @@ ion-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left:.4rem;
+    padding-left: .4rem;
 
     ion-label {
         padding: 0;
@@ -100,5 +100,9 @@ ion-grid {
 
     ion-button {
         margin: 0;
+    }
+
+    .totalNum {
+        font-size: .5rem;
     }
 }

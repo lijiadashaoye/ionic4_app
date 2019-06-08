@@ -109,15 +109,23 @@ export class Tab3Page {
           }
         }
       })
-      let arr = this.total.money.toFixed(2).split('.');
-      if (arr[1].length === 1) {
-        this.total.money = +(arr[0] + '.' + arr[1] + '0')
-      } else {
-        this.total.money = +(arr[0] + '.' + arr[1])
-      }
     })()
   }
+  // 格式化合计的文字
+  setMoney(num) {
+    if (num) {
+      let arr = ('' + num).split('.');
+      if (arr[1].length == 1) {
+        return arr[0] + '.' + arr[1] + '0'
+      } else {
+        return num.toFixed(2)
+      }
+    } else {
+      return num + '.00'
+    }
 
+
+  }
   toPay() {
     let arr = this.productList.filter(item => {
       if (item.checked) {
