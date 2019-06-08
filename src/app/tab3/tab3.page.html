@@ -1,9 +1,93 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      购物车
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-grid>
+    <ion-row class="wap_row" *ngFor="let item of productList">
+
+      <ion-col size='12' *ngIf='item.top'>
+        <ion-row class="item_top">
+          <ion-col size='10'>
+            {{item.top.title}}
+          </ion-col>
+          <ion-col size='2' class="item_top_act">
+            <span color='danger'>
+              {{item.top.type}}&nbsp;>
+            </span>
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+
+      <ion-col size='12'>
+        <ion-row>
+
+          <ion-col size='4'>
+            <ion-row>
+
+              <ion-col size='3' class="forCheckbox">
+                <ion-checkbox color="primary"></ion-checkbox>
+              </ion-col>
+
+              <ion-col size='9'>
+                <img class="prd_img" [src]='item.bottom.img'>
+              </ion-col>
+
+            </ion-row>
+          </ion-col>
+
+          <ion-col size='8' class="right_info">
+
+            <ion-row>
+              <ion-col size='12'>
+                <ion-row>
+                  <ion-col size='12'>
+                    {{item.bottom.title}}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col size='12'>
+                    {{item.bottom.checked}}
+                  </ion-col>
+
+                </ion-row>
+              </ion-col>
+
+            </ion-row>
+
+            <ion-row>
+              <ion-col size='12'>
+
+                <ion-row>
+                  <ion-col size='4' class="price">
+                    <span>￥</span>
+                    <span>{{item.bottom.zheng}}</span>
+                    <span>.{{item.bottom.ling}}</span>
+                  </ion-col>
+                  <ion-col size='4' offset='4' class="set_num">
+                    <ion-row>
+                      <ion-col size='3' class="num_act">-</ion-col>
+                      <ion-col size='6' class="num_input">
+                        8
+                      </ion-col>
+                      <ion-col size='3' class="num_act">+</ion-col>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+
+              </ion-col>
+            </ion-row>
+
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
