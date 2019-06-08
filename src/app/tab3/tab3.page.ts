@@ -117,4 +117,13 @@ export class Tab3Page {
       }
     })()
   }
+
+  toPay() {
+    let arr = this.productList.filter(item => {
+      if (item.checked) {
+        return item
+      }
+    });
+    console.log(arr)
+  }
 }
