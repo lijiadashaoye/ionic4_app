@@ -18,8 +18,8 @@ export class Tab3Page {
           img: `assets/images/list${i+1}.jpg`,
           title: '产品介绍',
           checked: '已选产品',
-          zheng: 5,
-          ling: 30,
+          num: 1,
+          price: 5.31
         }
       }
       if (i % 2 === 0) {
@@ -29,6 +29,38 @@ export class Tab3Page {
         }
       }
       this.productList.push(obj)
+    }
+  }
+  changeNum(type, item) {
+    if (type) {
+      item.bottom.num++
+    } else {
+      if (item.bottom.num > 1) {
+        item.bottom.num--
+      }
+    }
+  }
+
+  // 设置价格整数位
+  setZheng(price, num) {
+    let total: number = 0;
+    for (let i = 0; i < num; i++) {
+      total += price
+    }
+    let arr = total.toFixed(2).split('.');
+    return arr[0]
+  }
+  // 设置价格小数位
+  setLing(price, num) {
+    let total: number = 0;
+    for (let i = 0; i < num; i++) {
+      total += price
+    }
+    let arr = total.toFixed(2).split('.');
+    if (arr[1].length === 1) {
+      return arr[1] + '0'
+    } else {
+      return arr[1]
     }
   }
 }

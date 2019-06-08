@@ -66,16 +66,16 @@
                 <ion-row>
                   <ion-col size='4' class="price">
                     <span>￥</span>
-                    <span>{{item.bottom.zheng}}</span>
-                    <span>.{{item.bottom.ling}}</span>
+                    <span>{{setZheng(item.bottom.price,item.bottom.num)}}</span>
+                    <span>.{{setLing(item.bottom.price,item.bottom.num)}}</span>
                   </ion-col>
                   <ion-col size='4' offset='4' class="set_num">
                     <ion-row>
-                      <ion-col size='3' class="num_act">-</ion-col>
+                      <ion-col size='3' class="num_act"(click)="changeNum(false,item)">-</ion-col>
                       <ion-col size='6' class="num_input">
-                        8
+                        {{item.bottom.num}}
                       </ion-col>
-                      <ion-col size='3' class="num_act">+</ion-col>
+                      <ion-col size='3' class="num_act" (click)="changeNum(true,item)">+</ion-col>
                     </ion-row>
                   </ion-col>
                 </ion-row>

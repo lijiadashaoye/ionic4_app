@@ -56,7 +56,8 @@ ion-grid {
 
 .set_num {
     text-align: center;
-    border: .1rem solid rgb(235, 233, 233);
+    border: 1px solid rgb(235, 233, 233);
+    box-sizing: border-box;
 
     .num_act {
         background: rgb(240, 238, 238);
