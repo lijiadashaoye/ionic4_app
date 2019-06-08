@@ -100,16 +100,14 @@ export class Tab3Page {
   setTotal() {
     this.total.num = 0;
     this.total.money = 0;
-    (async () => {
-      await this.productList.forEach(item => {
-        if (item.checked) {
-          this.total.num += item.bottom.num;
-          for (let i = 0; i < item.bottom.num; i++) {
-            this.total.money += item.bottom.price
-          }
+    this.productList.forEach(item => {
+      if (item.checked) {
+        this.total.num += item.bottom.num;
+        for (let i = 0; i < item.bottom.num; i++) {
+          this.total.money += item.bottom.price
         }
-      })
-    })()
+      }
+    })
   }
   // 格式化合计的文字
   setMoney(num) {
