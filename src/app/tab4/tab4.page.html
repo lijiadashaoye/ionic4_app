@@ -1,9 +1,31 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
-    <ion-title>tab4</ion-title>
+    <ion-title>用户中心</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+  <div class="header">
+    <img src='assets/images/user.png'>
+    <p *ngIf="isLogin">用户：{{userName}}</p>
+    <p *ngIf="!isLogin" (click)="toLogin()">注册/登陆></p>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-icon slot='start' color="danger" name="add-circle-outline"></ion-icon>
+      <ion-label> 全部订单 </ion-label>
+    </ion-item>
+    <ion-item lines='none'>
+      <ion-icon slot='start' color="danger" name="add-circle-outline"></ion-icon>
+      <ion-label> 全部订单 </ion-label>
+    </ion-item>
+
+  </ion-list>
+  <ion-list>
+    <ion-item lines='none'>
+      <ion-icon slot='start' color="danger" name="add-circle-outline"></ion-icon>
+      <ion-label> 全部订单 </ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -1,0 +1,35 @@
+ion-content {
+    --background: rgb(240, 239, 239)
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 11rem;
+    background: url('/assets/images/user_bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    padding-left: 1.4rem;
+
+    img {
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+
+    p {
+        color: #fff;
+        font-size: 1.4rem;
+        padding-left: .8rem;
+        cursor: pointer;
+    }
+}
+
+ion-list {
+    margin-bottom: .4rem;
+
+    ion-label {
+        font-size: 1.2rem
+    }
+}
