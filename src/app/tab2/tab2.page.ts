@@ -1,6 +1,10 @@
 import {
   Component
 } from '@angular/core';
+import {
+  NavController
+} from '@ionic/angular'
+
 
 @Component({
   selector: 'app-tab2',
@@ -10,6 +14,7 @@ import {
 export class Tab2Page {
   left_lists = []; // 左侧导航
   right_lists = []; // 右侧产品展示数据
+  constructor(public navCon: NavController) {}
   ngOnInit(): void {
     for (let i = 1; i < 20; i++) {
       this.left_lists.push(`分类${i}`)
@@ -20,5 +25,9 @@ export class Tab2Page {
         title: `第${i+1}个`
       })
     }
+  }
+
+  toSearch() {
+    this.navCon.navigateForward('/search')
   }
 }
