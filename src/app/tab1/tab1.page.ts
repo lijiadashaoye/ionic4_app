@@ -1,6 +1,9 @@
 import {
   Component
 } from '@angular/core';
+import {
+  NavController
+} from '@ionic/angular'
 
 @Component({
   selector: 'app-tab1',
@@ -19,6 +22,8 @@ export class Tab1Page {
     },
   };
   lists = []; // list的数据
+  constructor(public navCon: NavController) {}
+  
   ngOnInit(): void {
     for (let i = 1; i < 4; i++) {
       this.listSlide.push({
