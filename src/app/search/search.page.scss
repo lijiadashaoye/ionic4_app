@@ -1,0 +1,18 @@
+.hotSearch {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 .4rem .8rem .4rem;
+    margin-bottom: .8rem;
+    border-bottom: 1rem solid rgb(240, 239, 239);
+
+    span {
+        display: inline-block;
+        padding: .3rem .6rem;
+        margin-top: .4rem;
+        background: rgb(235, 234, 234);
+        font-size: 1.2rem;
+        margin-left: .4rem;
+        border-radius: .3rem
+    }
+}

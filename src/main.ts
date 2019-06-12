@@ -11,7 +11,10 @@ import {
 import {
   environment
 } from './environments/environment';
+
+// npm i hammerjs --save
 import 'hammerjs'; // 引入配置手势事件
+
 
 if (environment.production) {
   enableProdMode();
