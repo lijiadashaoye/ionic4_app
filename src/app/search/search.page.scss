@@ -1,3 +1,8 @@
+
+ion-header{
+    border:none;
+}
+
 .hotSearch {
     display: flex;
     justify-content: flex-start;
@@ -14,5 +19,14 @@
         font-size: 1.2rem;
         margin-left: .4rem;
         border-radius: .3rem
+    }
+}
+
+.searchToolbar {
+    display: flex;
+
+    p {
+        width: 100%;
+        text-align: center
     }
 }

@@ -7,19 +7,32 @@
     </ion-buttons>
 
     <ion-searchbar placeholder="请输入关键词" animated [(ngModel)]='searchText'></ion-searchbar>
-
-
     <ion-buttons slot="end">
       <ion-button color="dark" (tap)="doSearch()">
         搜索
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+
+  <ion-toolbar *ngIf="!page">
+    <div class="searchToolbar">
+      <p (click)="searchType(1)">
+        综合
+      </p>
+      <p (click)="searchType(2)">
+        销量
+      </p>
+      <p (click)="searchType(3)">
+        价格
+      </p>
+    </div>
+  </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
 
-  <div *ngIf="page;else page1">
+  <div *ngIf="page; else page1">
     <h3>热搜</h3>
     <div class="hotSearch">
       <span *ngFor="let text of searchList" (tap)="showSearch(text)">{{text}}</span>
@@ -29,15 +42,42 @@
       <ion-item *ngFor="let text of searchList" (tap)="showSearch(text)">{{text}}</ion-item>
     </ion-list>
   </div>
-  <div #page1>
-    <h3>热搜</h3>
-    <div class="hotSearch">
-      <span *ngFor="let text of searchList" (tap)="showSearch(text)">{{text}}</span>
+
+  <ng-template #page1>
+    <div>
+
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
+      <h3>asdffs</h3>
     </div>
-    <h3>历史搜索</h3>
-    <ion-list>
-      <ion-item *ngFor="let text of searchList" (tap)="showSearch(text)">{{text}}</ion-item>
-    </ion-list>
-  </div>
+  </ng-template>
 
 </ion-content>

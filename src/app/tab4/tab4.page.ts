@@ -2,6 +2,9 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import {
+  NavController
+} from "@ionic/angular"
 
 @Component({
   selector: 'app-tab4',
@@ -10,12 +13,12 @@ import {
 })
 export class Tab4Page implements OnInit {
   isLogin = false;
-  userName='李朋'
-  constructor() {}
+  userName = '李朋'
+  constructor(public nav: NavController) {}
 
   ngOnInit() {}
-  toLogin(){
-    this.isLogin=true
+  toLogin() {
+    this.nav.navigateForward('/login')
   }
 
 }

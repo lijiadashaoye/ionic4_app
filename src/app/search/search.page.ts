@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  TemplateRef
 } from '@angular/core';
 import {
   NavController
@@ -14,7 +15,7 @@ import {
 export class SearchPage implements OnInit {
   searchText = ''; // 搜索的内容
   searchList = []; // 热搜记录
-  page=true;
+  page = true;
   constructor(public navCon: NavController) {}
 
   ngOnInit() {}
@@ -24,7 +25,11 @@ export class SearchPage implements OnInit {
   doSearch() {
     this.searchList.push(this.searchText)
   }
-  showSearch(text){
+  showSearch(text) {
+    this.page = false;
+  }
 
+  searchType(num) {
+    console.log(num)
   }
 }
