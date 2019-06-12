@@ -18,4 +18,16 @@ export class LoginPage implements OnInit {
   toBack() {
     this.navCon.back()
   }
+  // 联系客服
+  makePhone() {
+    console.log('联系客服')
+  }
+  // 忘记密码
+  forgetPass() {
+    console.log('忘记密码')
+  }
+  // 新用户注册
+  newUser() {
+    console.log('新用户注册')
+  }
 }

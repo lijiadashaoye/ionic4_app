@@ -1,0 +1,22 @@
+ion-toolbar {
+    --border-color: #fff;
+}
+
+.logo {
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.other span {
+    cursor: pointer;
+}
+
+.other span:hover {
+    opacity: .6;
+}
+
+.loginBtn {
+    padding: 1rem 3rem;
+}
