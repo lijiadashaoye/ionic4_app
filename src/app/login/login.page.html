@@ -26,11 +26,11 @@
       <ion-input type="text" placeholder='密码'> </ion-input>
     </ion-item>
     <ion-item lines='none' class="other">
-      <span (click)="forgetPass()" slot='start'>忘记密码</span>
-      <span (click)="newUser()" slot='end'>新用户注册</span>
+      <span (tap)="forgetPass()" slot='start'>忘记密码</span>
+      <span (tap)="newUser()" slot='end'>新用户注册</span>
     </ion-item>
     <div class="loginBtn">
-      <ion-button color="danger" expand="block">登陆</ion-button>
+      <ion-button color="danger" expand="block" (tap)="toLogin()">登陆</ion-button>
     </div>
 
   </ion-list>

@@ -30,4 +30,8 @@ export class LoginPage implements OnInit {
   newUser() {
     console.log('新用户注册')
   }
+  // 执行登陆
+  toLogin() {
+    console.log('登陆')
+  }
 }
