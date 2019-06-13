@@ -13,10 +13,17 @@ import {
 })
 export class Tab4Page implements OnInit {
   isLogin = false;
-  userName = '李朋'
+  userName = ''
   constructor(public nav: NavController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let kk = JSON.parse(sessionStorage.getItem('user'));
+    if (kk) {
+      this.userName = kk.user;
+      this.isLogin = true;
+    }
+
+  }
   toLogin() {
     this.nav.navigateForward('/login')
   }

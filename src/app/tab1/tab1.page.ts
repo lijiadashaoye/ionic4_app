@@ -3,7 +3,10 @@ import {
 } from '@angular/core';
 import {
   NavController
-} from '@ionic/angular'
+} from '@ionic/angular';
+import {
+  httpService
+} from '../service/service';
 
 @Component({
   selector: 'app-tab1',
@@ -11,6 +14,7 @@ import {
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  BaseUrl = '';
   listSlide = [];
   hotList = [];
   slideOpts = {
@@ -22,34 +26,55 @@ export class Tab1Page {
     },
   };
   lists = []; // list的数据
-  constructor(public navCon: NavController) {}
+  constructor(public navCon: NavController, public http: httpService) {}
 
   ngOnInit(): void {
-    for (let i = 1; i < 4; i++) {
-      this.listSlide.push({
-        pic: `assets/images/slide0${i}.png`,
-        url: ''
-      })
-    }
-    for (let i = 0; i < 10; i++) {
-      this.hotList.push({
-        pic: `assets/images/0${i}.jpg`,
-        title: `第${i+1}个`
-      })
-    }
-    for (let i = 0; i < 12; i++) {
-      this.lists.push({
-        pic: `assets/images/list${i+1}.jpg`,
-        title: `第${i+1}个`
-      })
-    }
+    this.BaseUrl = this.http.BaseUrl;
+    this.getLunBoData();
+    this.getProductList();
+    this.getLikeList();
+  }
+  // 获取轮播图片
+  getLunBoData() {
+    this.http.ajaxGet({
+      url: 'api/focus'
+    }).subscribe(res => {
+      this.listSlide = res['result'];
+    })
+  }
+  // 获取商品列表数据
+  getProductList() {
+    // is_hot=1
+    // is_best=1
+    // is_new=1
+    // search
+    this.http.ajaxGet({
+      url: 'api/plist?is_best=1'
+    }).subscribe(res => {
+      this.lists = res['result'];
+    })
+  }
+  // 获取猜你喜欢列表数据
+  getLikeList() {
+    // is_hot=1
+    // is_best=1
+    // is_new=1
+    // search
+    this.http.ajaxGet({
+      url: 'api/plist?is_hot=1'
+    }).subscribe(res => {
+      this.hotList = res['result'];
+    })
   }
 
+
   ionSlideTouchEnd(e) { // 手动滑动结束
-    setTimeout(() => e.target.starFtAutoplay(), 3000)
+    setTimeout(() => e.target.startAutoplay(), 3000)
   }
   ionSlideTap(e) { // 点击图片
-    e.target.getActiveIndex()
+    e.target.getActiveIndex().then(res=>{
+      console.log(res)
+    })
   }
 
   toSearch() {

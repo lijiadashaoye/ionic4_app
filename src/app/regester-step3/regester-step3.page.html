@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (tap)="toBack()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>完成注册</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <p class="title">设置登陆密码</p>
+    <ion-input type="text" placeholder='输入登陆密码'> </ion-input>
+    <ion-item lines='none'>
+      <ion-checkbox slot="start" color="danger"></ion-checkbox>
+      <ion-label>密码可见</ion-label>
+    </ion-item>
+    <p class="jieshao">密码由6-20位字母、数字或半角符号组成，不能是10位以下纯数字/字母/半角符号，字母需区分大小写</p>
+    <ion-button color="danger" expand='block' (tap)="next()">完成</ion-button>
+    <p>遇到问题？您可以<a (tap)="content()">联系客服</a></p>
+  </div>
+
+</ion-content>

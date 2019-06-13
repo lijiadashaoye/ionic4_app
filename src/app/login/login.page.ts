@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
   }
   // 新用户注册
   newUser() {
-    console.log('新用户注册')
+    this.navCon.navigateForward('/regester-step1')
   }
   // 执行登陆
   toLogin() {

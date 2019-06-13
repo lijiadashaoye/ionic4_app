@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (tap)="toBack()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>输入手机号</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-input type="text" placeholder='请输入手机号码'> </ion-input>
+    <ion-button color="danger" expand='block' (tap)="next()">下一步</ion-button>
+    <p>遇到问题？您可以<a (tap)="content()">联系客服</a></p>
+  </div>
+</ion-content>

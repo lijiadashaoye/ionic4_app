@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import {
   NavController
-} from '@ionic/angular'
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-search',
@@ -23,7 +23,7 @@ export class SearchPage implements OnInit {
     this.navCon.back()
   }
   doSearch() {
-    this.searchList.push(this.searchText)
+    
   }
   showSearch(text) {
     this.page = false;

@@ -28,6 +28,12 @@ import {
 import {
   AppComponent
 } from './app.component';
+import {
+  HttpClientModule
+} from '@angular/common/http';
+import {
+  httpService
+} from './service/service'
 
 // 配置全局统一样式
 const config: object = {
@@ -40,11 +46,13 @@ const config: object = {
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     IonicModule.forRoot(config), AppRoutingModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    httpService,
     {
       provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy

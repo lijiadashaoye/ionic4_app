@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (tap)="toBack()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>输入验证码</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div padding class="forYanZhen">
+    <p class="title">请输入收到的验证码</p>
+    <div>
+      <ion-input type="text" placeholder='输入验证码'> </ion-input>
+      <ion-button color='light' (tap)="reSend()">重新发送</ion-button>
+    </div>
+    <ion-button color="danger" expand='block' (tap)="next()">下一步</ion-button>
+    <p class="con">遇到问题？您可以<a (tap)="content()">联系客服</a></p>
+  </div>
+</ion-content>

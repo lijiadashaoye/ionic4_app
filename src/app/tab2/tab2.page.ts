@@ -3,7 +3,10 @@ import {
 } from '@angular/core';
 import {
   NavController
-} from '@ionic/angular'
+} from '@ionic/angular';
+import {
+  httpService
+} from '../service/service';
 
 
 @Component({
@@ -12,19 +15,35 @@ import {
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  BaseUrl = '';
+  selectID = '';
+
   left_lists = []; // 左侧导航
   right_lists = []; // 右侧产品展示数据
-  constructor(public navCon: NavController) {}
+  constructor(public navCon: NavController, public http: httpService) {}
   ngOnInit(): void {
-    for (let i = 1; i < 20; i++) {
-      this.left_lists.push(`分类${i}`)
-    }
-    for (let i = 0; i < 12; i++) {
-      this.right_lists.push({
-        pic: `assets/images/list${i+1}.jpg`,
-        title: `第${i+1}个`
-      })
-    }
+    this.BaseUrl = this.http.BaseUrl;
+    this.getProductList()
+  }
+
+  // 获取商品分类列表数据
+  getProductList() {
+    this.http.ajaxGet({
+      url: 'api/pcate'
+    }).subscribe(res => {
+      this.left_lists = res['result'];
+      this.getProductInfo(this.left_lists[0]._id)
+    })
+  }
+
+  // 获取商品分类具体数据
+  getProductInfo(id) {
+    this.selectID = id;
+    this.http.ajaxGet({
+      url: `api/pcate?pid=${id}`
+    }).subscribe(res => {
+      this.right_lists = res['result'];
+    })
   }
 
   toSearch() {

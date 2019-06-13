@@ -15,10 +15,10 @@
 
 <ion-content>
   <!-- pager='true'，显示分页。 -->
-  <ion-slides pager='false' [options]="slideOpts" (ionSlideTouchEnd)="ionSlideTouchEnd($event)"
+  <ion-slides pager='false' #slides [options]="slideOpts" (ionSlideTouchEnd)="ionSlideTouchEnd($event)"
     (ionSlideTap)="ionSlideTap($event)">
     <ion-slide *ngFor="let item of listSlide">
-      <img [src]='item.pic'>
+      <img [src]='BaseUrl+item.pic'>
     </ion-slide>
   </ion-slides>
 
@@ -28,8 +28,7 @@
 
   <ion-segment scrollable='true'>
     <ion-segment-button *ngFor="let item of hotList" class="segment">
-      <img [src]='item.pic'>
-      <p>{{item.title}}</p>
+      <img [src]='BaseUrl+item.s_pic'>
     </ion-segment-button>
   </ion-segment>
 
@@ -40,8 +39,8 @@
   <ion-grid fixed>
     <ion-row>
       <ion-col size='6' *ngFor="let item of lists">
-        <img [src]='item.pic'>
-        <p style="text-align:center">{{item.title}}</p>
+        <img [src]='BaseUrl+item.pic'>
+        <p style="text-align:center">{{item.title}} ￥{{item.price}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>

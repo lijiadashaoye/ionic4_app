@@ -1,0 +1,24 @@
+.forYanZhen>div {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+ion-input {
+    border: .1rem solid rgb(223, 222, 222);
+    border-radius: .2rem;
+    padding: 0;
+    --padding-start:1rem
+}
+
+ion-button:nth-of-type(1) {
+    margin: 0;
+}
+
+.con {
+    margin-top:1rem
+}
+.title{
+    padding-bottom: .5rem;
+    color: rgb(145, 143, 143);
+    font-size:1.2rem;
+}

@@ -17,8 +17,9 @@
   <div class="wap">
     <div class="left">
       <ion-list lines='full'>
-        <ion-item *ngFor="let lis of left_lists">
-          <ion-label>{{lis}}</ion-label>
+        <ion-item *ngFor="let lis of left_lists" [ngClass]="{'hasSelect': selectID===lis._id}"
+          (tap)="getProductInfo(lis._id)">
+          <ion-label>{{lis.title}}</ion-label>
         </ion-item>
       </ion-list>
     </div>
@@ -26,23 +27,7 @@
       <ion-grid fixed>
         <ion-row>
           <ion-col size='4' *ngFor="let item of right_lists">
-            <img [src]='item.pic'>
-            <p style="text-align:center">{{item.title}}</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size='4' *ngFor="let item of right_lists">
-            <img [src]='item.pic'>
-            <p style="text-align:center">{{item.title}}</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size='4' *ngFor="let item of right_lists">
-            <img [src]='item.pic'>
+            <img [src]='BaseUrl+item.pic'>
             <p style="text-align:center">{{item.title}}</p>
           </ion-col>
         </ion-row>
