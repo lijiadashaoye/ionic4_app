@@ -33,7 +33,8 @@ import {
 } from '@angular/common/http';
 import {
   httpService
-} from './service/service'
+} from './service/service';
+
 
 // 配置全局统一样式
 const config: object = {
@@ -41,7 +42,9 @@ const config: object = {
   backButtonText: '返回' // 设置默认返回按钮文字
 }
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,

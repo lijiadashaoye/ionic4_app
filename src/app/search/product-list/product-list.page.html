@@ -1,0 +1,12 @@
+<ion-content>
+  <ul>
+    <li *ngFor="let item of lists">
+      <img [src]="BaseUrl+item.pic">
+      <p>{{item.title}} ￥{{item.price}}</p>
+    </li>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ul>
+</ion-content>

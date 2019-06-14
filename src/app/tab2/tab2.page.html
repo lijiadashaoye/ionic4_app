@@ -26,7 +26,7 @@
     <div class="right">
       <ion-grid fixed>
         <ion-row>
-          <ion-col size='4' *ngFor="let item of right_lists">
+          <ion-col size='4' *ngFor="let item of right_lists" (tap)="toProduct(item)">
             <img [src]='BaseUrl+item.pic'>
             <p style="text-align:center">{{item.title}}</p>
           </ion-col>

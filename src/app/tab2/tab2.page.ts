@@ -49,4 +49,9 @@ export class Tab2Page {
   toSearch() {
     this.navCon.navigateForward('/search')
   }
+  toProduct(item) {
+    this.navCon.navigateForward(['/search', {
+      data: item._id
+    }])
+  }
 }
