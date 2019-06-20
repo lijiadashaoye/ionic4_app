@@ -1,8 +1,12 @@
 import {
   Component,
   OnInit,
-  Input
+  Input,
+  ViewChild
 } from '@angular/core';
+import {
+  IonContent
+} from '@ionic/angular'
 
 import {
   httpService
@@ -18,7 +22,7 @@ export class ProductListPage implements OnInit {
   lists = [];
   page = 1;
   @Input() cid = '';
-  @Input() list = []
+  @Input() list = [];
 
   constructor(
     public http: httpService
@@ -26,11 +30,9 @@ export class ProductListPage implements OnInit {
 
   ngOnInit() {
     this.BaseUrl = this.http.BaseUrl;
-  }
-  ngOnChanges(): void {
     this.lists = this.list;
     if (this.cid) {
-      this.loadData(null);
+      this.loadData(null)
     }
   }
   // 获取数据
@@ -44,6 +46,23 @@ export class ProductListPage implements OnInit {
       this.page++;
       this.lists = [...this.lists, ...res['result']];
       event ? event.target.complete() : ''; // 停止旋转
+    })
+  }
+  @ViewChild(IonContent) content: IonContent;
+  @ViewChild('infinite') infinite;
+
+  scrolltop() {
+    this.content.scrollToTop(0)
+  }
+
+  doSearch(text) {
+    this.page = 1;
+    this.scrolltop();
+    this.http.ajaxGet({
+      url: 'api/plist?search=' + text
+    }).subscribe(res => {
+      this.lists = res['result'];
+      this.infinite.disabled = false; // 禁用上拉加载
     })
   }
 }

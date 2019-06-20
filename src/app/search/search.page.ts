@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ViewChild
 } from '@angular/core';
 import {
   NavController
@@ -21,11 +22,15 @@ export class SearchPage implements OnInit {
   searchText = ''; // 搜索的内容
   searchList = []; // 热搜记录
   page = false;
-  cid='';
-  list=[]
+  cid = '';
+  list = [];
+  bk = 1; // 设置筛选背景色
+  @ViewChild('pageChild') content;
+
   constructor(
     public act: ActivatedRoute,
-    public http: httpService, public navCon: NavController) {}
+    public http: httpService, public navCon: NavController,
+  ) {}
 
   ngOnInit() {
     this.act.params.subscribe(par => {
@@ -37,17 +42,14 @@ export class SearchPage implements OnInit {
   }
   // 搜索按钮
   doSearch() {
-    this.http.ajaxGet({
-      url: 'api/plist?search'
-    }).subscribe(res => {
-     this.list=res['result'];
-    })
+    this.content.doSearch(this.searchText)
   }
   showSearch(text) {
     this.page = false;
   }
 
   searchType(num) {
-    console.log(num)
+    this.bk = num;
+    this.content.scrolltop(0)
   }
 }

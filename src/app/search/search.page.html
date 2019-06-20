@@ -16,13 +16,13 @@
 
   <ion-toolbar *ngIf="!page">
     <div class="searchToolbar">
-      <p (click)="searchType(1)">
+      <p (click)="searchType(1)" [ngClass]="bk==1?'setBk':''">
         综合
       </p>
-      <p (click)="searchType(2)">
+      <p (click)="searchType(2)" [ngClass]="bk==2?'setBk':''">
         销量
       </p>
-      <p (click)="searchType(3)">
+      <p (click)="searchType(3)" [ngClass]="bk==3?'setBk':''">
         价格
       </p>
     </div>
@@ -44,7 +44,7 @@
   </div>
 
   <ng-template #page1>
-    <app-product-list [cid]='cid' [list]='list'></app-product-list>
+    <app-product-list [cid]='cid' [list]='list' #pageChild></app-product-list>
   </ng-template>
 
 </ion-content>
