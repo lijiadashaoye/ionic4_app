@@ -72,7 +72,7 @@ export class Tab1Page {
     setTimeout(() => e.target.startAutoplay(), 3000)
   }
   ionSlideTap(e) { // 点击图片
-    e.target.getActiveIndex().then(res=>{
+    e.target.getActiveIndex().then(res => {
       console.log(res)
     })
   }
@@ -80,5 +80,22 @@ export class Tab1Page {
   toSearch() {
     this.navCon.navigateForward('/search')
   }
-
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter')
+  }
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter')
+  }
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave')
+  }
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave')
+  }
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy')
+  }
+  emitterAct() {
+    this.http.emitter.emit('emitterAct')
+  }
 }

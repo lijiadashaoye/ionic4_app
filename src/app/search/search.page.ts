@@ -29,13 +29,15 @@ export class SearchPage implements OnInit {
 
   constructor(
     public act: ActivatedRoute,
-    public http: httpService, public navCon: NavController,
+    public http: httpService,
+    public navCon: NavController,
   ) {}
 
   ngOnInit() {
     this.act.params.subscribe(par => {
       this.cid = par.data;
-    })
+    });
+
   }
   toBack() {
     this.navCon.back()

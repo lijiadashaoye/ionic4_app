@@ -21,11 +21,10 @@
       <img [src]='BaseUrl+item.pic'>
     </ion-slide>
   </ion-slides>
-
+  <ion-button expand='block' color="primary" (click)='emitterAct()'>使用 EventEmitter3</ion-button>
   <div class="h_title">
     猜你喜欢
   </div>
-
   <ion-segment scrollable='true'>
     <ion-segment-button *ngFor="let item of hotList" class="segment">
       <img [src]='BaseUrl+item.s_pic'>

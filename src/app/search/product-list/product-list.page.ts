@@ -65,4 +65,5 @@ export class ProductListPage implements OnInit {
       this.infinite.disabled = false; // 禁用上拉加载
     })
   }
+
 }
