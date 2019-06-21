@@ -70,8 +70,8 @@ export class Tab3Page {
       return arr[1]
     }
   }
-  // 计算当前项项的总价
-  // 如果所有项的 checked 全是 true 就表示全选 使 this.isCheckAll = true;
+  // 每一个checkbox发生变动时会执行
+  // 如果所有项的 checked 全是 true 就表示全选,使 this.isCheckAll = true;
   // 若有一个为false，则不是全选，使 this.isCheckAll = fasle;
   changeTotal() {
     let arr = this.productList.map(item => item.checked)
@@ -82,6 +82,7 @@ export class Tab3Page {
     }
     this.setTotal()
   }
+
   // 设置全选按钮
   selectAll() {
     if (this.isCheckAll) {
@@ -89,7 +90,9 @@ export class Tab3Page {
     } else {
       // 如果this.isCheckAll=false，执行此段代码
       // 再判断是否有未选中的，如果没有未选中的，则表示已经是全选状态，则全部变为不选中
-      let arr = this.productList.map(item => item.checked)
+      // 如果本来是全选状态，单点一个checkbox时，
+      // 先执行 changeTotal()，改变isCheckAll，再触发selectAll()
+      let arr = this.productList.map(item => item.checked);
       if (!arr.includes(false)) {
         this.productList.forEach(item => item.checked = this.isCheckAll)
       }
