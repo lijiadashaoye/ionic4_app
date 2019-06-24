@@ -20,4 +20,8 @@ export class RegesterStep2Page implements OnInit {
   next() {
     this.navCon.navigateForward('/regester-step3')
   }
+  reSend(){
+
+  }
+  content(){}
 }

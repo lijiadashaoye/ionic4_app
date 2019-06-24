@@ -24,4 +24,5 @@ export class RegesterStep3Page implements OnInit {
     }))
     this.navCon.navigateForward('/tabs/tab4')
   }
+  content(){}
 }
